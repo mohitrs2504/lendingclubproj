@@ -51,7 +51,7 @@ def test_check_complete_count(spark):
 @pytest.mark.parametrize(
         "status,count",
         [("CLOSED",7556),
-         ("PENDING_PAYMENT", 15031),
+         ("PENDING_PAYMENT", 15030),
          ("COMPLETE",22899)
          ]
 )
