@@ -1,18 +1,22 @@
 pipeline {
     agent any
-        steps {
-            script {
-               echo 'build completed successfully'
+
+    stages {
+        stage('Build') {
+            steps {
+               echo "build completed successfully"
             }
         }
-        steps {
-            script {
-               echo 'test completed successfully'
+        stage('Test') {
+            steps {
+               echo "test completed successfully"
             }
         }
-        steps {
-            script {
-               echo 'package completed successfull'
+        stage('Package') {
+            steps {
+               echo "package completed successfully"
             }
         }
+	
+    }
 }
