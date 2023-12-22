@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               sh 'python --version'
+               sh 'pipenv --python python3 sync'
             }
         }
         stage('Test') {
@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Package') {
             steps {
-               echo 'package completed successfullyy'
+               echo 'package completed successfully'
             }
         }
 	
