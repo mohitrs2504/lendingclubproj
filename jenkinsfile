@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               sh '/home/sumitmittal1306/.local/bin/pipenv --python python3 sync'
+               sh 'who am i'
             }
         }
         stage('Test') {
