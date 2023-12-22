@@ -14,7 +14,7 @@ pipeline {
         }
         steps {
             script {
-               echo 'package completed successfully'
+               echo 'package completed successfull'
             }
         }
 	
