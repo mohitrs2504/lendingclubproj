@@ -5,8 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                sh 'pip3 install --user pipenv'
-               sh 'pipenv --rm || exit 0'
-               sh 'pipenv install'
+               sh '/bitnami/jenkins/home/.local/lib/python3.9/site-packages/pipenv --rm || exit 0'
+               sh '/bitnami/jenkins/home/.local/lib/python3.9/site-packages/pipenv install'
             }
         }
         stage('Test') {
