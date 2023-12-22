@@ -1,6 +1,7 @@
 import sys
-from lib import DataManipulation, DataReader, Utils
+from lib import DataManipulation, DataReader, Utils, logger
 from pyspark.sql.functions import *
+from lib.logger import Log4j
 
 if __name__ == '__main__':
 
@@ -14,7 +15,9 @@ if __name__ == '__main__':
 
     spark = Utils.get_spark_session(job_run_env)
 
-    print("Created Spark Session")
+    logger = Log4j(spark)
+
+    logger.warn("Created Spark Session")
 
     orders_df = DataReader.read_orders(spark,job_run_env)
 
@@ -30,4 +33,4 @@ if __name__ == '__main__':
 
     #print(aggregated_results.collect())
 
-    print("end of main")
+    logger.info("this is the end of main")
