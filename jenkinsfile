@@ -1,7 +1,5 @@
 pipeline {
     agent any
-
-    stages {
         steps {
             script {
                echo 'build completed successfully'
@@ -17,6 +15,4 @@ pipeline {
                echo 'package completed successfull'
             }
         }
-	
-    }
 }
