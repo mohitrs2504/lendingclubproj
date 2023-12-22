@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-               echo 'test completed successfullyy'
+               echo 'test completed successfullyyy'
             }
         }
         stage('Package') {
             steps {
-               echo 'package completed successfully'
+               echo 'package completed successfullyy'
             }
         }
 	
