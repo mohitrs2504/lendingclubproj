@@ -20,11 +20,13 @@ pipeline {
         }
          stage('Package') {
             steps {
-               echo 'packaging now..'
+               sh 'zip -r retailproject.zip .'
+
             }
         }
         stage('Deploy') {
             steps {
+               sh 'scp retailproject.zip $LABS_USR@g02.itversity.com:/home/itv005857'
                sh 'sshpass -p $LABS_PSW ssh -o StrictHostKeyChecking=no $LABS_USR@g02.itversity.com hostname'
             }
         }
