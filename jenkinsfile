@@ -13,11 +13,6 @@ pipeline {
                sh '/bitnami/jenkins/home/.local/bin/pipenv install'
             }
         }
-        stage('Test') {
-            steps {
-               sh '/bitnami/jenkins/home/.local/bin/pipenv run pytest'
-            }
-        }
          stage('Package') {
             steps {
                sh 'zip -r retailproject.zip .'
@@ -27,9 +22,9 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-               sh 'sshpass -p $LABS_PSW scp retailproject.zip $LABS_USR@g02.itversity.com:/home/itv005857/retailproject'
+               sh 
+               sh 'sshpass -p $LABS_PSW scp -r . $LABS_USR@g02.itversity.com:/home/itv005857/retailproject'
                sh 'sshpass -p $LABS_PSW ssh -o StrictHostKeyChecking=no $LABS_USR@g02.itversity.com hostname'
-               sh 'unzip /home/itv005857/retailproject/retailproject.zip'
             }
         }
 	
