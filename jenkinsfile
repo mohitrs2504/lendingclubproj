@@ -20,7 +20,8 @@ pipeline {
         }
          stage('Package') {
             steps {
-               sh 'zip -r retailproject.zip /bitnami/jenkins/home'
+               sh 'zip -r retailproject.zip /bitnami/jenkins/home/.local/*.py'
+               sh 'pwd'
 
             }
         }
