@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        LABS = credentials('labcreds')
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -14,9 +18,9 @@ pipeline {
                sh '/bitnami/jenkins/home/.local/bin/pipenv run pytest'
             }
         }
-        stage('Package') {
+        stage('Deploy') {
             steps {
-               echo 'package completed successfully'
+               sh 'sshpass -p $LABS_PSW ssh -o StrictHostKeyChecking=no $LABS_USR@g02.itversity.com hostname'
             }
         }
 	
