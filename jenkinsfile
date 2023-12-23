@@ -27,8 +27,9 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-               sh 'sshpass -p $LABS_PSW scp retailproject.zip $LABS_USR@g02.itversity.com:/home/itv005857'
+               sh 'sshpass -p $LABS_PSW scp retailproject.zip $LABS_USR@g02.itversity.com:/home/itv005857/retailproject'
                sh 'sshpass -p $LABS_PSW ssh -o StrictHostKeyChecking=no $LABS_USR@g02.itversity.com hostname'
+               sh 'unzip /home/itv005857/retailproject/retailproject.zip'
             }
         }
 	
