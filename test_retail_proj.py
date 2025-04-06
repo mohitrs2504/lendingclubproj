@@ -61,8 +61,3 @@ def test_check_count(spark,status,count):
      filtered_count = filter_orders_generic(orders_df,status).count()
      assert filtered_count == count
 
-def test_check_count_new(spark,status,count):
-     orders_df1 = read_orders(spark,"LOCAL")
-     filtered_count1 = filter_orders_generic(orders_df1,status).count()
-     assert filtered_count1 == count
-
