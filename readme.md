@@ -1,1 +1,1 @@
-@this file shows the continued statements being migrated into the recent completement.
+@this file shows the continued statements being migrated into the recent complement.
